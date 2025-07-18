@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sadece Senin İçin, Nisa</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap');
+    body {
+      margin: 0; padding: 0;
+      height: 100vh;
+      background: linear-gradient(120deg, #fbeaea, #fdf6f0, #fbeaea);
+      font-family: 'Quicksand', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #4b2e2e;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.7);
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(166, 91, 91, 0.3);
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #a65b5b;
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 20px 0;
+      line-height: 1.5;
+    }
+    button {
+      background: transparent;
+      border: 2px solid #a65b5b;
+      color: #a65b5b;
+      padding: 12px 30px;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #a65b5b;
+      color: #fff0f0;
+    }
+    .note {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      color: #4b2e2e;
+      display: none;
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    /* Mobil uyumlu */
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+        max-width: 90vw;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      p, .note p {
+        font-size: 1.1rem;
+      }
+      button {
+        padding: 10px 25px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bu Sayfa Sadece Senin İçin</h1>
+    <p>Bir not var burada… Ama sadece senin için yazıldı.</p>
+    <button id="showNote">Tıklamak senin elinde</button>
+    <div class="note" id="note">
+      <p>
+        Belki bugün 14 Şubat değil…<br>
+        Ama 14 Şubat geldiğinde yanında olamayacağım.<br><br>
+        Eğer bir gün bile kendini değersiz hissedersen,<br>
+        <strong>bu sayfayı tekrar açmanı istiyorum.</strong><br><br>
+        Çünkü birisi senin özel olduğunu fark etti,<br>
+        ve bunu sana söylemeden gitmek istemedi.<br><br>
+        <span style="color:#a65b5b; font-weight: bold;">Doğum günün kutlu olsun, Nisa.</span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('showNote');
+    const note = document.getElementById('note');
+
+    btn.addEventListener('click', () => {
+      note.style.display = 'block';
+      btn.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
